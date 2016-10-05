@@ -57,3 +57,8 @@ colnames(collision.df)[colnames(collision.df) == "Events"] =c("Weather")
 
 write.csv(collision.df, file="data/collision_dateframe.csv")
 
+
+###############################################
+collision.test= collision.df[1:50000,]
+write.csv(collision.test, file="data/collision_test.csv")
+
