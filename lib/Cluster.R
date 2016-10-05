@@ -1,5 +1,6 @@
 ####### This is cluster test code
 ####### Please make sure you set the working directory
+setwd("~/Documents/Courses/ADS/Project 2/Fall2016-Proj2-grp14")
 collision.test= read.csv(file="data/collision_test.csv")
 n=20
 la.min= 40.5
