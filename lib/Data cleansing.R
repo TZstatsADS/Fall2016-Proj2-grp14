@@ -11,13 +11,13 @@ library(timeDate)
 collision.auto= fread("data/NYPD_Motor_Vehicle_Collisions.csv",select=c("DATE","TIME","LATITUDE", "LONGITUDE",
                   "NUMBER OF PERSONS INJURED","NUMBER OF PERSONS KILLED","NUMBER OF PEDESTRIANS INJURED", 
                   "NUMBER OF PEDESTRIANS KILLED","NUMBER OF CYCLIST INJURED","NUMBER OF CYCLIST KILLED",
-                  "NUMBER OF MOTORIST INJURED", "NUMBER OF MOTORIST KILLED","CONTRIBUTING FACTOR VEHICLE.1",
-                  "VEHICLE TYPE CODE.1", "VEHICLE TYPE CODE 2", "VEHICLE TYPE CODE 3"))
+                  "NUMBER OF MOTORIST INJURED", "NUMBER OF MOTORIST KILLED","CONTRIBUTING FACTOR VEHICLE 1",
+                  "VEHICLE TYPE CODE 1", "VEHICLE TYPE CODE 2", "VEHICLE TYPE CODE 3"))
 collision.bike= fread("data/manhattan_bike_injury.csv",select=c("DATE","TIME","LATITUDE", "LONGITUDE",
                   "NUMBER OF PERSONS INJURED","NUMBER OF PERSONS KILLED","NUMBER OF PEDESTRIANS INJURED", 
                   "NUMBER OF PEDESTRIANS KILLED","NUMBER OF CYCLIST INJURED","NUMBER OF CYCLIST KILLED",
-                  "NUMBER OF MOTORIST INJURED", "NUMBER OF MOTORIST KILLED","CONTRIBUTING FACTOR VEHICLE.1",
-                  "VEHICLE TYPE CODE.1", "VEHICLE TYPE CODE 2", "VEHICLE TYPE CODE 3"))
+                  "NUMBER OF MOTORIST INJURED", "NUMBER OF MOTORIST KILLED","CONTRIBUTING FACTOR VEHICLE 1",
+                  "VEHICLE TYPE CODE 1", "VEHICLE TYPE CODE 2", "VEHICLE TYPE CODE 3"))
 weather.df= data.frame(fread("data/weatherdata.csv", select= c("Date","Events")))
 #names(collision.df.bike)
 collision.df<- data.frame(rbind(collision.auto, collision.bike))
