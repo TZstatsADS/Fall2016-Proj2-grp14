@@ -6,6 +6,8 @@ library(shiny)
 library(bitops)
 library(leaflet)
 library(shinydashboard)
+library(plotly)
+library(RColorBrewer)
 
 toyPoint=data.frame(Lng=runif(1000,min=-74.1,max=-73.5),
                     Lat=runif(1000,min=40.4,max=41.0),
@@ -275,7 +277,7 @@ server <- function(input, output,session) {
   cluster_map <- leaflet(cluster_full) %>% 
     addTiles() %>%  # Add default OpenStreetMap map tiles
     addRectangles(lng1=~lo.min, lat1=~la.min, lng2=~lo.max, lat2=~la.max, stroke=F, 
-                  weight = 1, fillColor = ~factpal(type), fillOpacity = 1, popup = NULL, options = pathOptions())# %>%
+                  weight = 1, fillColor = ~factpal(type), fillOpacity = 0.4, popup = NULL, options = pathOptions())# %>%
   output$ClusterMap=renderLeaflet(cluster_map)
   ##//
   c1= apply(cluster_full[cluster_full[,29]==1,],2,mean)
