@@ -2,26 +2,22 @@ require(forecast)
 library(tseries)
 library(dplyr)
 require(stats)
-#sales <- ts(c(99, 58, 52, 83, 94, 73, 97, 83, 86, 63, 77, 70, 87, 84, 60, 105, 
-            #  87, 93, 110, 71, 158, 52, 33, 68, 82, 88, 84),frequency=2)
-#model = auto.arima(sales)
-#plot(forecast(model))
-require(forecast)
-library(tseries)
-require(stats)
-library(dplyr)
+library(plotly)
+library(wday)
+library("forecast")
+library("highcharter")
 
 
 OurFile = data.frame(read.csv("C://Users//svish//Documents//Sem 2//Time Series//Fall2016-Proj2-grp14-master//data//collision_dateframe.csv", header = TRUE,stringsAsFactors = FALSE))
 OurFile$Date2 = as.Date(OurFile$DATE)
 NewFile = OurFile
 NewFile$Dead = 1
-#NewFile$Dead = NewFile$NUMBER.OF.PERSONS.INJURED + NewFile$NUMBER.OF.PERSONS.KILLED + NewFile$NUMBER.OF.PEDESTRIANS.INJURED + NewFile$NUMBER.OF.PEDESTRIANS.KILLED + NewFile$NUMBER.OF.CYCLIST.INJURED +
-#  NewFile$NUMBER.OF.CYCLIST.KILLED + NewFile$NUMBER.OF.MOTORIST.INJURED + NewFile$NUMBER.OF.MOTORIST.KILLED 
+NewFile$Dead = NewFile$NUMBER.OF.PERSONS.INJURED + NewFile$NUMBER.OF.PERSONS.KILLED + NewFile$NUMBER.OF.PEDESTRIANS.INJURED + NewFile$NUMBER.OF.PEDESTRIANS.KILLED + NewFile$NUMBER.OF.CYCLIST.INJURED +
+  NewFile$NUMBER.OF.CYCLIST.KILLED + NewFile$NUMBER.OF.MOTORIST.INJURED + NewFile$NUMBER.OF.MOTORIST.KILLED 
 FinalFile = data.frame(NewFile$Date2, NewFile$Dead)
 p = aggregate(FinalFile$NewFile.Dead, by=list(Category=FinalFile$NewFile.Date2), FUN=sum)
 q = as.data.frame(p)
-
+q$dyname = wday(q$Category)
 
 # FORECAST = function(Y,model,h,b=400){
 #   prev=forecast(model,h)
@@ -45,58 +41,106 @@ CHECK=function(model,lag=30){
   pacf(E,lag.max = lag)
 }
 
+Chart = function(model){
+  airforecast <- forecast(model1, level = 95)
+  CHECK(model1)
+  hchart(airforecast)
+}
 
 q$year=substr(q$Category,  1, 4)
 q$month=substr(q$Category,  6, 7)
 q$day=substr(q$Category,9,10)
 
 TrialForMonth = aggregate(q$x,by = list(q$year, q$month), FUN = "mean")
-TrialForMonth = TrialForMonth[order(TrialForMonth$Group.1),]
-
 
 
 salesForMonth=as.data.frame(TrialForMonth$x)
 ww =TrialForMonth[1:44,]
 salesForMonth = ww$x
-salesForDay=q$x
+m=q[1:1339,]
+salesForDay = m$x
 
 plot(salesForDay,type="l")
 plot(salesForMonth,type="l")
 
 modelMonth1=arima(salesForMonth,order=c(1,1,1),
                   seasonal = list(order = c(0, 1, 0), period=12))
+Chart(modelMonth1)
 modelMonth2=arima(salesForMonth,order=c(0,1,1),
                   seasonal = list(order = c(0, 1, 0), period=12))
+Chart(modelMonth2)
 modelMonth3=arima(salesForMonth,order=c(1,1,0),
                   seasonal = list(order = c(0, 1, 0), period=12))
-
-library("forecast")
-library("highcharter")
-
-airforecast <- forecast(modelMonth3, level = 95)
-CHECK(modelMonth3)
-hchart(airforecast)
-
-
-CHECK(modelMonth1)
-FORECAST(salesForMonth,modelMonth1,h=20)
-CHECK(modelMonth2)
-FORECAST(salesForMonth,modelMonth2,h=20)
-CHECK(modelMonth3)
-FORECAST(salesForMonth,modelMonth3,h=20)
+Chart(modelMonth3)
+# CHECK(modelMonth1)
+# FORECAST(salesForMonth,modelMonth1,h=20)
+# CHECK(modelMonth2)
+# FORECAST(salesForMonth,modelMonth2,h=20)
+# CHECK(modelMonth3)
+# FORECAST(salesForMonth,modelMonth3,h=20)
 
 modelDay1=arima(salesForDay,order=c(1,1,1),
                 seasonal = list(order = c(0, 1, 0), period=365))
+Chart(modelDay1)
 modelDay2=arima(salesForDay,order=c(0,1,1),
                 seasonal = list(order = c(0, 1, 0), period=365))
+Chart(modelDay2)
 modelDay3=arima(salesForDay,order=c(1,1,0),
                 seasonal = list(order = c(0, 1, 0), period=365))
+Chart(modelDay3)
+
+airforecast <- forecast(modelDay1, level = 95)
+CHECK(modelDay1)
+hchart(airforecast)
+
+# FORECAST(salesForDay,modelDay1,h=500)
+# CHECK(modelDay2)
+# FORECAST(salesForDay,modelDay2,h=500)
+# CHECK(modelDay3)
+# FORECAST(salesForDay,modelDay3,h=500)
+
+##Year #month #Week
+
+##To plot yearly average
+YearlyPlot = function(Data){
+  p = Data
+  p$newdaymonth = paste(p$month, p$day)
+  n = aggregate(p$x, by = list(p$newdaymonth), FUN = "mean")
+  plot_ly(data = n, x = n$Group.1, y = n$x, type = 'scatter', mode = "lines")
+}
+
+YearlyPlot(q)
+
+##To plot monthly average
+MonthlyPlot = function(Data){
+  p = Data
+  n = aggregate(p$x, by = list(p$day), FUN = "mean")
+  plot_ly(data = n, x = n$Group.1, y = n$x, type = 'scatter', mode = "lines+markers")
+}
+
+MonthlyPlot(q)
+
+###
+DayOfWeekPlot = function(Data){
+  p = Data
+  n = aggregate(p$x, by = list(p$dyname), FUN = "mean")
+  plot_ly(data = n, x = n$Group.1, y = n$x, type = 'scatter', mode = "lines+markers")
+  }
+DayOfWeekPlot(q)
 
 
 
 
-FORECAST(salesForDay,modelDay1,h=500)
-CHECK(modelDay2)
-FORECAST(salesForDay,modelDay2,h=500)
-CHECK(modelDay3)
-FORECAST(salesForDay,modelDay3,h=500)
+
+
+
+
+
+
+
+
+
+
+
+
+
