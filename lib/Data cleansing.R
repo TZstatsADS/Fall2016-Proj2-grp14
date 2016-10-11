@@ -12,12 +12,12 @@ collision.auto= fread("data/NYPD_Motor_Vehicle_Collisions.csv",select=c("DATE","
                   "NUMBER OF PERSONS INJURED","NUMBER OF PERSONS KILLED","NUMBER OF PEDESTRIANS INJURED", 
                   "NUMBER OF PEDESTRIANS KILLED","NUMBER OF CYCLIST INJURED","NUMBER OF CYCLIST KILLED",
                   "NUMBER OF MOTORIST INJURED", "NUMBER OF MOTORIST KILLED","CONTRIBUTING FACTOR VEHICLE 1",
-                  "VEHICLE TYPE CODE 1", "VEHICLE TYPE CODE 2", "VEHICLE TYPE CODE 3"))
+                  "VEHICLE TYPE CODE 1"))
 collision.bike= fread("data/manhattan_bike_injury.csv",select=c("DATE","TIME","LATITUDE", "LONGITUDE",
                   "NUMBER OF PERSONS INJURED","NUMBER OF PERSONS KILLED","NUMBER OF PEDESTRIANS INJURED", 
                   "NUMBER OF PEDESTRIANS KILLED","NUMBER OF CYCLIST INJURED","NUMBER OF CYCLIST KILLED",
                   "NUMBER OF MOTORIST INJURED", "NUMBER OF MOTORIST KILLED","CONTRIBUTING FACTOR VEHICLE 1",
-                  "VEHICLE TYPE CODE 1", "VEHICLE TYPE CODE 2", "VEHICLE TYPE CODE 3"))
+                  "VEHICLE TYPE CODE 1"))
 weather.df= data.frame(fread("data/weatherdata.csv", select= c("Date","Events")))
 #names(collision.df.bike)
 collision.df<- data.frame(rbind(collision.auto, collision.bike))
@@ -26,9 +26,9 @@ collision.df= collision.df[!is.na(collision.df$LATITUDE) & !is.na(collision.df$L
 ###################################################################
 #### Injury summary
 #collision.test <- collision.df[290:300,]
-collision.df$People.Injured = (collision.df$NUMBER.OF.PERSONS.INJURED !=0)
-collision.df$People.Killed = (collision.df$NUMBER.OF.PERSONS.KILLED !=0)
-collision.df$People.Injured.or.Killed= (collision.df$NUMBER.OF.PERSONS.INJURED !=0 |collision.df$NUMBER.OF.PERSONS.KILLED !=0 )
+#collision.df$People.Injured = (collision.df$NUMBER.OF.PERSONS.INJURED !=0)
+#collision.df$People.Killed = (collision.df$NUMBER.OF.PERSONS.KILLED !=0)
+#collision.df$People.Injured.or.Killed= (collision.df$NUMBER.OF.PERSONS.INJURED !=0 |collision.df$NUMBER.OF.PERSONS.KILLED !=0 )
 #dim(collision.test)
 
 ###################################################################
@@ -48,17 +48,18 @@ myholidays  <- dates(as.character(holiday(2012:2016,holiday_list)),format="Y-M-D
 collision.df$Holiday= is.holiday(collision.df$DATE,myholidays)
 #class(collision.df[1,2])
 collision.df$TIME= as.factor(sapply(strsplit(collision.df$TIME,":"), "[[", 1) )
-
+collision.df$Month= month(collision.df$DATE)
 ###################################
 ### Weather summary
+weather.df[weather.df$Events== "",2]= "Sunny"
 weather.df$Date= as.Date(weather.df$Date)
 collision.df = merge(collision.df, weather.df, by.x= "DATE", by.y= "Date",all.x= TRUE)
 colnames(collision.df)[colnames(collision.df) == "Events"] =c("Weather")
 
-write.csv(collision.df, file="data/collision_dateframe.csv")
+write.csv(collision.df, file="data/collision_dataframe.csv")
 
 
 ###############################################
-collision.test= collision.df[1:50000,]
-write.csv(collision.test, file="data/collision_test.csv")
+#collision.test= collision.df[1:50000,]
+#write.csv(collision.test, file="data/collision_test.csv")
 
