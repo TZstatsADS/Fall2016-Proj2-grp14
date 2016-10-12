@@ -19,17 +19,13 @@ Term: Fall 2016
  + From the given data what is the approximate no of collisions that will take place in the near future?
 
 
-In this second project of Applied Data Science, we carried out *Exploratory Data Analysis and Visualization* via a shiny app [Traffic Care](https://luckyzone.shinyapps.io/ironscreen/). The alternative urls are  [URL2](luckyzone.shinyapps.io/trafficcare1goo.gl/MnPXy8), [URL3](https://guanzy.shinyapps.io/trafficcare2/), [URL4](https://guanzy.shinyapps.io/trafficcare3/). The data source is from NYC open data released from the [New York City open data portal](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions/h9gi-nx95). See [Project 2 Description](doc/project2_desc.md) for more details.  
+In this second project of Applied Data Science, we carried out *Exploratory Data Analysis and Visualization* via a shiny app [Traffic Care](https://luckyzone.shinyapps.io/trafficcare4/). The alternative urls are  [URL2](https://luckyzone.shinyapps.io/trafficcare4/). The data source is from NYC open data released from the [New York City open data portal](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions/h9gi-nx95). See [Project 2 Description](doc/project2_desc.md) for more details.  
 
 Here are the QR codes for the app. You could accsess to either of them. Just to prevent too much traffic!
 
-![screenshot](doc/QR code 1.jpg)
+![screenshot](doc/QR 1.png)
 
-![screenshot](doc/QR code 2.jpg)
-
-![screenshot](doc/QR code 3.jpg)
-
-![screenshot](doc/QR code 4.jpg)
+![screenshot](doc/QR 2.jpg)
 
 **Contribution statement**: 
 Project Traffic Care
