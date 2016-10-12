@@ -1,18 +1,18 @@
 # Project: Open Data NYC - an RShiny app development project
-### [Project Description](doc/project2_desc.md)
+### [Traffic Assistant](doc/project2_desc.md)
 
 Term: Fall 2016
 
 + Team #
 + Projec title: Lorem ipsum dolor sit amet
 + Team members
-	+ team member 1
-	+ team member 2
-	+ team member 3
-	+ team member 4
-	+ team member 5
+	+ Chencheng Jiang
+	+ Yiwei Sun
+	+ Skanda Vishwanath
+	+ Guanzhong You
+	+ Yunyi Zhang
 	
-+ Project summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
++ Project summary: The project is about the 
 
 In this second project of Applied Data Science, we will carry out *Exploratory Data Analysis and Visualization* via a shiny app on a topic about open data released from the [New York City open data portal](https://nycopendata.socrata.com/). See [Project 2 Description](doc/project2_desc.md) for more details.  
 
@@ -26,7 +26,12 @@ The **learning goals** for this project is
 - business intelligence for data science
 - systems development/design life cycle
 - shiny app/shiny server
-	
+Objective of project: Urban mega cities face a myriad no of issues from population explosion to health. An explosion in the no of vehicles used has brought, with it a complex set of issues like collision. Collision compromises the safety and security of any urban agglomeration. Our application is aimed at helping policy makers to make informed decisions. Our app provides hassle free visuals results to key questions like –
+a. When and where is collision most prevalent?
+b. What are the areas that have equal no of collisions?
+c. Given a particular area how does the traffic situation (“literally”) look like?
+d. From the given data what is the approximate no of collisions that will take place in the near future?
+
 **Contribution statement**: ([default](doc/a_note_on_contributions.md)) All team members contributed equally in all stages of this project. All team members approve our work presented in this GitHub repository including this contributions statement. 
 
 Following [suggestions](http://nicercode.github.io/blog/2013-04-05-projects/) by [RICH FITZJOHN](http://nicercode.github.io/about/#Team) (@richfitz). This folder is orgarnized as follows.
