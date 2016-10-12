@@ -1,0 +1,45 @@
+---
+title: "Accident Report"
+output: html_document
+params:
+  Map: NA
+  CtFactor: NA
+  SeasonPlot: NA
+---
+
+```{r include=FALSE, echo=FALSE, results='hide'}
+library(RCurl)
+library(RJSONIO)
+library(dplyr)
+library(shiny)
+library(bitops)
+library(leaflet)
+library(plotly) ##//Yunyi
+library(shinydashboard) ##//Yunyi
+library(magrittr) ##//Yunyi
+library(highcharter) ##//Yunyi
+library(chron)##//Yunyi
+library(timeDate)##//Yunyi
+
+```
+
+#Zone View
+```{r eval=TRUE, echo=FALSE, fig.align='center'}
+ params$Map
+```
+
+Auto word analysis to be added :)
+
+#Seasonal Trend
+```{r eval=TRUE, echo=FALSE, fig.align='center'}
+ params$SeasonPlot
+```
+
+Auto Word analysis to be added :)
+
+#Major Contributing Factor
+```{r eval=TRUE, echo=FALSE, fig.align='center',warning=FALSE}
+ params$CtFactor
+```
+
+Auto Word analysis to be added :)
