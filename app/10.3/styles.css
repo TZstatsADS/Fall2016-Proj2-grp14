@@ -1,0 +1,15 @@
+input[type="number"] {
+  max-width: 80%;
+}
+
+
+#TitleSummary {
+    color:rgb(30, 30, 55);
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+}
+.cont{
+    color:rgb(57, 75, 116);
+
+    font-family: "Lucida Console", Monaco, monospace;
+}
