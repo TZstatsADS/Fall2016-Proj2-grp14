@@ -31,8 +31,13 @@ In this second project of Applied Data Science, we carried out *Exploratory Data
 
 **Contribution statement**: 
 Project Traffic Care
+
 Team members:Chencheng Jiang, Yiwei Sun, Skanda Vishwanath, Guanzhong You, Yunyi Zhang
-Summary: All team members contributed equally in all stages of this project. All team members approve our work presented in this GitHub repository including this contributions statement. 
+
+Summary: 
+
+All team members contributed equally in all stages of this project. All team members approve our work presented in this GitHub repository including this contributions statement. 
+
 All group members designed the study, discussed the framework of the app. Guanzhong You built the framework of shiny app. Chencheng Jiang built the clustering model. Yiwei Sun worked on the type of the vehicle in the collision against year and year. Yunyi Jiang worked on the contributing factor part and summary of the project. Everyone added his own contribution to the final shiny app code. All team members contributed to the GitHub repository and prepared the presentation. All team members approve our work presented in our GitHub repository including this contribution statement.
 
 Following [suggestions](http://nicercode.github.io/blog/2013-04-05-projects/) by [RICH FITZJOHN](http://nicercode.github.io/about/#Team) (@richfitz). This folder is orgarnized as follows.
