@@ -3,8 +3,8 @@
 
 Term: Fall 2016
 
-+ Team #
-+ Projec title: Lorem ipsum dolor sit amet
++ Team #14
++ Projec title: Traffic Assistant App
 + Team members
 	+ Chencheng Jiang
 	+ Yiwei Sun
@@ -12,7 +12,12 @@ Term: Fall 2016
 	+ Guanzhong You
 	+ Yunyi Zhang
 	
-+ Project summary: The project is about the 
++ Project summary: Urban mega cities face a myriad no of issues from population explosion to health. An explosion in the no of vehicles used has brought, with it a complex set of issues like collision. Collision compromises the safety and security of any urban agglomeration. Our application is aimed at helping policy makers to make informed decisions. Our app provides hassle free visuals results to key questions like –
+ + When and where is collision most prevalent?
+ + What are the areas that have equal no of collisions?
+ + Given a particular area how does the traffic situation (“literally”) look like?
+ + From the given data what is the approximate no of collisions that will take place in the near future?
+
 
 In this second project of Applied Data Science, we will carry out *Exploratory Data Analysis and Visualization* via a shiny app on a topic about open data released from the [New York City open data portal](https://nycopendata.socrata.com/). See [Project 2 Description](doc/project2_desc.md) for more details.  
 
@@ -26,11 +31,6 @@ The **learning goals** for this project is
 - business intelligence for data science
 - systems development/design life cycle
 - shiny app/shiny server
-Objective of project: Urban mega cities face a myriad no of issues from population explosion to health. An explosion in the no of vehicles used has brought, with it a complex set of issues like collision. Collision compromises the safety and security of any urban agglomeration. Our application is aimed at helping policy makers to make informed decisions. Our app provides hassle free visuals results to key questions like –
-a. When and where is collision most prevalent?
-b. What are the areas that have equal no of collisions?
-c. Given a particular area how does the traffic situation (“literally”) look like?
-d. From the given data what is the approximate no of collisions that will take place in the near future?
 
 **Contribution statement**: ([default](doc/a_note_on_contributions.md)) All team members contributed equally in all stages of this project. All team members approve our work presented in this GitHub repository including this contributions statement. 
 
