@@ -27,10 +27,7 @@ In this second project of Applied Data Science, we carried out *Exploratory Data
 
 ![screenshot](doc/QR code of Traffic Care.jpg)
 
-The **learning goals** for this project is 
-- business intelligence for data science
-- systems development/design life cycle
-- shiny app/shiny server
+![screenshot](doc/QR code of Traffic Care.jpg)
 
 **Contribution statement**: ([default](doc/a_note_on_contributions.md)) All team members contributed equally in all stages of this project. All team members approve our work presented in this GitHub repository including this contributions statement. 
 
