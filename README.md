@@ -21,6 +21,10 @@ Term: Fall 2016
 
 In this second project of Applied Data Science, we carried out *Exploratory Data Analysis and Visualization* via a shiny app [Traffic Care](https://luckyzone.shinyapps.io/trafficcare4/). The alternative urls are  [URL2](https://luckyzone.shinyapps.io/trafficcare4/). The data source is from NYC open data released from the [New York City open data portal](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions/h9gi-nx95). See [Project 2 Description](doc/project2_desc.md) for more details.  
 
+The Screenshot of Traffic Care.
+
+![screenshot](doc/screen shot.jpg)
+
 Here are the QR codes for the app. You could accsess to either of them. Just to prevent too much traffic!
 
 ![screenshot](doc/QR 1.png)
