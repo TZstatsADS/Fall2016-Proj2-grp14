@@ -25,7 +25,7 @@ In this second project of Applied Data Science, we carried out *Exploratory Data
 + **After your finish your shiny app, please replace the screenshot below with one from your own app.**
 ```
 
-![screenshot](doc/screenshot2.png)
+![screenshot](doc/QR code of Traffic Care.png)
 
 The **learning goals** for this project is 
 - business intelligence for data science
