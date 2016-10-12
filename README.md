@@ -21,13 +21,15 @@ Term: Fall 2016
 
 In this second project of Applied Data Science, we carried out *Exploratory Data Analysis and Visualization* via a shiny app [Traffic Care](https://luckyzone.shinyapps.io/ironscreen/). The data source is from NYC open data released from the [New York City open data portal](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions/h9gi-nx95). See [Project 2 Description](doc/project2_desc.md) for more details.  
 
-```diff
-+ **After your finish your shiny app, please replace the screenshot below with one from your own app.**
-```
+Here are the QR codes for the app. You could accsess 
 
-![screenshot](doc/QR code of Traffic Care.jpg)
+![screenshot](doc/QR code 1.jpg)
 
-![screenshot](doc/QR code of Traffic Care.jpg)
+![screenshot](doc/QR code 2.jpg)
+
+![screenshot](doc/QR code 3.jpg)
+
+![screenshot](doc/QR code 4.jpg)
 
 **Contribution statement**: 
 Project Traffic Care
