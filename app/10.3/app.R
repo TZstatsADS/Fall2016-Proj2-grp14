@@ -554,7 +554,7 @@ server <- function(input, output,session) {
   yaxis<-list(title="Number of Collision")
   
   clusterlines <- plot_ly(data= plot_cluster, x=1:24, y=~c4,type="scatter", mode= "lines", line=list(color=cols1[1]), name="Type 1") %>%
-    layout(xaxis=xaxis,yaxis=yaxis,title="Averafe ollision numbers for different pattens") %>%
+    layout(xaxis=xaxis,yaxis=yaxis,title="Average collision numbers for different pattens") %>%
     add_trace(p,y=~c2,mode= "lines",line=list(color=cols1[2]),name="Type 2") %>%
     add_trace(p,y=~c3,mode= "lines",line=list(color=cols1[3]),name="Type 3") %>%
     add_trace(p,y=~c1,mode= "lines",line=list(color=cols1[4]),name="Type 4")
