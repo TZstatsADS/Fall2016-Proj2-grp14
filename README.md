@@ -27,9 +27,9 @@ The Screenshot of Traffic Care.
 
 Here are the QR codes for the app. You could accsess to either of them. Just to prevent too much traffic!
 
-![screenshot](doc/QR 1.png)
+![screenshot](./doc/QR 1.png)
 
-![screenshot](doc/QR 2.jpg)
+![screenshot](./doc/QR 2.jpg)
 
 **Contribution statement**: 
 Project Traffic Care
